@@ -5,7 +5,7 @@ from apistar.handlers import docs_urls, static_urls
 
 def welcome(name=None):
     if name is None:
-        return {'message': 'Welcome to API Star!'}
+        return {'message': 'This is a test'}
     return {'message': 'Welcome to API Star, %s!' % name}
 
 
