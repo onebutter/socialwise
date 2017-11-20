@@ -1,0 +1,15 @@
+version: '2'
+services:
+  user_api:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile-user
+    container_name: user_api
+    command: sh -c "nginx && uwsgi --ini /app/uwsgi.ini --processes 1 --touch-reload /app/user/app/app.py"
+    environment:
+      PYTHONUNBUFFERED: 0
+    volumes:
+    - './user:/app/user'
+    - './util:/app/util'
+    ports:
+     - "8110:80"
