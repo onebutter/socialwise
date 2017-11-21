@@ -1,0 +1,21 @@
+# Use an official Python runtime as a parent image
+FROM python:3.6-slim
+
+# Set the working directory to /app
+WORKDIR /app
+COPY user ./user
+COPY util ./util
+
+# Install any needed packages specified in requirements.txt
+RUN pip3 install --upgrade pip && \
+    cp user/nginx/default.conf /etc/nginx/conf.d/ && \
+    mv user/requirements.txt user/uwsgi.ini user/wsgi.py . && \
+    pip3 install -r requirements.txt && \
+    mkdir -p /var/run/
+
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Run app.py when the container launches
+CMD ["user/docker/start.sh"]
