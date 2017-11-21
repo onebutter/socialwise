@@ -1,9 +1,5 @@
 {
   "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
   "plugins": [
     "prettier",
     "react"
