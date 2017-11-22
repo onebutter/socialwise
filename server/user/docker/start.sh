@@ -4,6 +4,5 @@
 
 ## Start NGINX Server
 nginx
-
 ## Start UWSGI Application Protocol
 uwsgi --ini /app/uwsgi.ini
