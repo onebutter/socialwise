@@ -16,6 +16,6 @@ routes = [
 ]
 
 app = App(routes=routes)
-print(app)
+
 if __name__ == '__main__':
     app.main()
