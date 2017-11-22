@@ -12,7 +12,7 @@ RUN apk add --no-cache \
 
 RUN pip3 install --upgrade pip && \
     cp user/nginx/default.conf /etc/nginx/conf.d/ && \
-    mv user/requirements.txt user/uwsgi.ini user/wsgi.py . && \
+    mv user/requirements.txt user/uwsgi.ini . && \
     pip3 install -r requirements.txt && \
     mkdir -p /var/run/ && \
     mkdir -p /run/nginx
