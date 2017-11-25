@@ -7,6 +7,7 @@ import Box from './components/Box';
 
 class NamecardContainer extends Component {
   render() {
+    const { name } = this.props.match.params;
     return <Box content={`${name} loves donkeys`} />;
   }
 }

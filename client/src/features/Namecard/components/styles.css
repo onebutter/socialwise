@@ -1,5 +1,7 @@
 
 
 .root {
-  background: red;
+  background: rgb(13, 48, 77);
+  color: rgb(230, 217, 163);
+  text-align: center;
 }
