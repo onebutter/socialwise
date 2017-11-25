@@ -1,5 +1,6 @@
 import React from 'react';
+import styles from './styles.css';
 
-const Box = <div>some garbo</div>;
+const Box = ({ content }) => <div className={styles.root}>{content}</div>;
 
 export default Box;

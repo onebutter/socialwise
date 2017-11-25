@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { loadNamecardRequest } from './actions';
+
+import Box from './components/Box';
 
 class NamecardContainer extends Component {
   render() {
-    console.log(this.props);
-    return <div>some garbo</div>;
+    return <Box content={`${name} loves donkeys`} />;
   }
 }
 
-export default withRouter(connect()(NamecardContainer));
+const mapDispatchToProps = {
+  load: loadNamecardRequest
+};
+
+export default withRouter(connect(null, mapDispatchToProps)(NamecardContainer));
