@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadNamecardRequest } from './actions';
 
-import Box from './components/Box';
+import Profile from './components/Profile';
+import Services from './components/Services';
 
 class NamecardContainer extends Component {
   componentDidMount() {
@@ -14,7 +15,12 @@ class NamecardContainer extends Component {
   render() {
     const { status, entity } = this.props;
     if (status.success) {
-      return <Box content={`${entity.name} loves donkeys`} />;
+      return (
+        <div>
+          <Profile content={entity.name} />
+          <Services content={entity.services} />
+        </div>
+      );
     }
     return null;
   }
