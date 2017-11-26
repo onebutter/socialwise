@@ -20,7 +20,7 @@ const entities = (state = entitiesInitial, action) => {
     case NAMECARD_LOAD_SUCCESS:
       state = {
         ...state,
-        [action.name]: action.data
+        [action.username]: action.data
       };
       return state;
     default:

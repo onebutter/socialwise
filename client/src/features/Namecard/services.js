@@ -1,7 +1,23 @@
-export const fetchUser = name =>
+export const fetchUser = username =>
   new Promise(resolve => {
     resolve({
-      name,
+      profile: {
+        username,
+        aliases: [
+          {
+            type: 'irl',
+            value: 'Kenneth Lee'
+          },
+          {
+            type: 'callMe',
+            value: 'Ken'
+          },
+          {
+            type: 'legal',
+            value: 'Changbok Kenneth Lee'
+          }
+        ]
+      },
       services: [
         {
           type: 'facebook',

@@ -2,19 +2,19 @@ export const NAMECARD_LOAD_REQUEST = 'NAMECARD_LOAD_REQUEST';
 export const NAMECARD_LOAD_SUCCESS = 'NAMECARD_LOAD_SUCCESS';
 export const NAMECARD_LOAD_ERROR = 'NAMECARD_LOAD_ERROR';
 
-export const loadNamecardRequest = name => ({
+export const loadNamecardRequest = username => ({
   type: NAMECARD_LOAD_REQUEST,
-  name
+  username
 });
 
-export const loadNamecardSuccess = (name, data) => ({
+export const loadNamecardSuccess = (username, data) => ({
   type: NAMECARD_LOAD_SUCCESS,
-  name,
+  username,
   data
 });
 
-export const loadNamecardError = (name, error) => ({
+export const loadNamecardError = (username, error) => ({
   type: NAMECARD_LOAD_ERROR,
-  name,
+  username,
   error
 });

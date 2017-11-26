@@ -8,8 +8,8 @@ import Services from './components/Services';
 
 class NamecardContainer extends Component {
   componentDidMount() {
-    const { name } = this.props.match.params;
-    this.props.load(name);
+    const { username } = this.props.match.params;
+    this.props.load(username);
   }
 
   render() {
@@ -17,7 +17,7 @@ class NamecardContainer extends Component {
     if (status.success) {
       return (
         <div>
-          <Profile content={entity.name} />
+          <Profile content={entity.profile} />
           <Services content={entity.services} />
         </div>
       );
@@ -31,10 +31,10 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state, props) => {
-  const { name } = props.match.params;
+  const { username } = props.match.params;
   return {
     status: state.namecard.status,
-    entity: state.namecard.entities && state.namecard.entities[name]
+    entity: state.namecard.entities && state.namecard.entities[username]
   };
 };
 

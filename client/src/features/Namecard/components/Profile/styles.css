@@ -1,7 +1,9 @@
-
-
 .root {
   background: rgb(13, 48, 77);
-  color: rgb(230, 217, 163);
   text-align: center;
+}
+
+.username {
+  color: rgb(230, 217, 163);
+  font-size: 12vw;
 }

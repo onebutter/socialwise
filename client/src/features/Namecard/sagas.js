@@ -4,10 +4,10 @@ import * as actions from './actions';
 
 export function* loadNamecard(action) {
   try {
-    const data = yield call(fetchUser, action.name);
-    yield put(actions.loadNamecardSuccess(action.name, data));
+    const data = yield call(fetchUser, action.username);
+    yield put(actions.loadNamecardSuccess(action.username, data));
   } catch (error) {
-    yield put(actions.loadNamecardError(action.name, error));
+    yield put(actions.loadNamecardError(action.username, error));
   }
 }
 
