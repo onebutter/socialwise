@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { fetchStationInfo } from './services';
+import { fetchUser } from './services';
 import * as actions from './actions';
 
 export function* loadNamecard(action) {
   try {
-    const data = yield call(fetchStationInfo, action.name);
+    const data = yield call(fetchUser, action.name);
     yield put(actions.loadNamecardSuccess(action.name, data));
   } catch (error) {
     yield put(actions.loadNamecardError(action.name, error));

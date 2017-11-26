@@ -59,7 +59,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      Features: path.join(process.cwd(), 'src', 'features')
+      Features: path.join(process.cwd(), 'src', 'features'),
+      Utils: path.join(process.cwd(), 'src', 'utils')
     }
   },
   devtool: 'eval-source-map',

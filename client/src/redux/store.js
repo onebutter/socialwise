@@ -3,10 +3,9 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import sagas from './sagas';
 
-// import reducers from './reducers/';
+import { createReducers } from './reducers';
 
-const reducers = () => {};
-
+const reducers = createReducers();
 const sagaMiddleware = createSagaMiddleware();
 
 const configureStore = () => {
