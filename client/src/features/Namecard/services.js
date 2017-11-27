@@ -5,27 +5,31 @@ export const fetchUser = username =>
         username,
         aliases: [
           {
-            type: 'irl',
+            type: 'In real life',
             value: 'Kenneth Lee'
           },
           {
-            type: 'callMe',
+            type: 'please call me',
             value: 'Ken'
           },
           {
-            type: 'legal',
-            value: 'Changbok Kenneth Lee'
+            type: 'legal name',
+            value: 'Changbok Lee'
           }
         ]
       },
       services: [
         {
           type: 'facebook',
-          url: 'http://www.facebook.com/donkeysmash'
+          value: 'http://www.facebook.com/donkeysmash'
         },
         {
           type: 'email',
-          url: 'changbok89@gmail.com'
+          value: 'changbok89@gmail.com'
+        },
+        {
+          type: 'mobile',
+          value: '5197212892'
         }
       ]
     });

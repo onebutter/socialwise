@@ -7,7 +7,7 @@ class Profile extends Component {
     const { username, aliases } = this.props.content;
     return (
       <div className={styles.root}>
-        <div className={styles.username}>{username}</div>
+        <div className={styles.username}>@{username}</div>
         <Aliases content={aliases} />
       </div>
     );

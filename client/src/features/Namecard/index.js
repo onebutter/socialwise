@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadNamecardRequest } from './actions';
+import styles from './styles.css';
 
 import Profile from './components/Profile';
 import Services from './components/Services';
@@ -16,7 +17,7 @@ class NamecardContainer extends Component {
     const { status, entity } = this.props;
     if (status.success) {
       return (
-        <div>
+        <div className={styles.root}>
           <Profile content={entity.profile} />
           <Services content={entity.services} />
         </div>
