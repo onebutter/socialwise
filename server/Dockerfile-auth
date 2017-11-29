@@ -1,0 +1,21 @@
+FROM alpine:3.6
+
+WORKDIR /app
+COPY user ./user
+COPY util ./util
+
+RUN apk add --no-cache \
+        nginx \
+        uwsgi \
+        uwsgi-python3 \
+        python3
+
+RUN pip3 install --upgrade pip && \
+    cp auth/nginx/default.conf /etc/nginx/conf.d/ && \
+    mv auth/requirements.txt auth/uwsgi.ini . && \
+    pip3 install -r requirements.txt && \
+    mkdir -p /var/run/ && \
+    mkdir -p /run/nginx
+
+EXPOSE 80
+CMD ["user/docker/start.sh"]

@@ -13,3 +13,17 @@ services:
     - './util:/app/util'
     ports:
      - "8110:80"
+
+  auth_api:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile-auth
+    container_name: auth_api
+    command: sh -c "nginx && uwsgi --ini /app/uwsgi.ini --processes 1 --touch-reload /app/auth/app/app.py"
+    environment:
+      PYTHONUNBUFFERED: 0
+    volumes:
+    - './auth:/app/auth'
+    - './util:/app/util'
+    ports:
+     - "8111:80"
