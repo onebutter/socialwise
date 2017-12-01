@@ -1,0 +1,10 @@
+.root {
+  background: rgb(13, 48, 77);
+  border-radius: 2px;
+}
+
+.username {
+  color: rgb(230, 217, 163);
+  font-size: 2rem;
+  padding: 0.3rem;
+}

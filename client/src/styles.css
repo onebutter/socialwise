@@ -1,0 +1,28 @@
+:root {
+  @custom-media --xs-viewport only screen and (min-width: 321px);
+  @custom-media --sm-viewport only screen and (min-width: 768px);
+  @custom-media --md-viewport only screen and (min-width: 1024px);
+  @custom-media --lg-viewport only screen and (min-width: 1224px);
+}
+
+html {
+  font-size: 12px;
+  @media (--xs-viewport) {
+    font-size: 14px;
+  }
+  @media (--sm-viewport) {
+    font-size: 16px;
+  }
+  @media (--md-viewport) {
+    font-size: 18px;
+
+  }
+  @media (--lg-viewport) {
+    font-size: 22px;
+  }
+}
+
+body {
+  background-color: #c5c1c1;
+  font-family: 'Belleza', sans-serif;
+}

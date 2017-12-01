@@ -1,0 +1,11 @@
+.root {
+  margin-bottom: 0.5rem;
+}
+
+.type {
+  color: rgb(86, 86, 86);
+}
+
+.value {
+  margin-left: 0.5rem;
+}

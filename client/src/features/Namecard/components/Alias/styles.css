@@ -1,0 +1,14 @@
+.root {
+  color: #e6e6dd;
+  padding: 0.3rem;
+  border-radius: 3px;
+}
+
+.type {
+
+}
+
+.value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}

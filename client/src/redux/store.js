@@ -1,12 +1,27 @@
-import { createStore } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
-import { devToolsEnhancer } from 'redux-devtools-extension';
-// import reducers from './reducers/';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import sagas from './sagas';
 
-const reducers = () => {};
+import { createReducers } from './reducers';
+
+const reducers = createReducers();
+const sagaMiddleware = createSagaMiddleware();
 
 const configureStore = () => {
-  let store = createStore(reducers, devToolsEnhancer());
+  const middlewares = [sagaMiddleware];
+  const store = createStore(
+    reducers,
+    composeWithDevTools(applyMiddleware(...middlewares))
+  );
+  sagaMiddleware.run(sagas);
+
+  if (module.hot) {
+    module.hot.accept('./reducers', () =>
+      store.replaceReducer(require('./reducers').default)
+    ); // eslint-disable-line global-require
+  }
+
   return store;
 };
 

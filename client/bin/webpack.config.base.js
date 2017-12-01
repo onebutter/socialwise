@@ -6,7 +6,6 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
@@ -60,12 +59,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      Features: path.join(process.cwd(), 'src', 'features')
+      Features: path.join(process.cwd(), 'src', 'features'),
+      Utils: path.join(process.cwd(), 'src', 'utils')
     }
   },
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3000,
     stats: {
       colors: true
