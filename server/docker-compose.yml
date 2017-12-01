@@ -27,3 +27,14 @@ services:
     - './util:/app/util'
     ports:
      - "8111:80"
+  
+  mongo:
+    build:
+      context: ./mongo
+      dockerfile: Dockerfile
+    container_name: mongo
+    environment:
+      MONGODB_USER: 'connectme'
+      MONGODB_PASS: 'mypassword'
+    ports:
+      - "27017:27017"
