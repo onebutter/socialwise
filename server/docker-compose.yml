@@ -9,8 +9,8 @@ services:
     environment:
       PYTHONUNBUFFERED: 0
     volumes:
-    - './user:/app/user'
-    - './util:/app/util'
+     - './user:/app/user'
+     - './util:/app/util'
     ports:
      - "8110:80"
 
@@ -23,8 +23,8 @@ services:
     environment:
       PYTHONUNBUFFERED: 0
     volumes:
-    - './auth:/app/auth'
-    - './util:/app/util'
+     - './auth:/app/auth'
+     - './util:/app/util'
     ports:
      - "8111:80"
   
