@@ -5,7 +5,7 @@ DATABASE=${MONGODB_DATABASE:-"admin"}
 PASS=${MONGODB_PASS:-"4dminPass"}
 
 declare -a DATABASE_LIST=(
-    "user"
+    "users"
 )
 
 
@@ -24,7 +24,7 @@ mongo admin --eval "db.createUser({user: '$USER', pwd: '$PASS', roles:[{role:'ro
 
 for db in "${DATABASE_LIST[@]]}"
 do
-    echo echo "creating database auth :: $db"
+    echo "creating database auth :: $db"
     mongo "$db" --eval "db.createUser({user: '$USER', pwd: '$PASS', roles:[{role:'dbOwner',db:'$db'}]});"
     # mongoimport --db "$db" --collection "$db" --drop --file "/data/$db/mongo.json"
 done

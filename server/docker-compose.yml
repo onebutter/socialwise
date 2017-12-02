@@ -8,6 +8,10 @@ services:
     command: sh -c "nginx && uwsgi --ini /app/uwsgi.ini --processes 1 --touch-reload /app/user/app/app.py"
     environment:
       PYTHONUNBUFFERED: 0
+      MONGODB_HOST: mongo
+      MONGODB_USER: connectme
+      MONGODB_PASS: mypassword
+      MONGODB_DATABASE: users
     volumes:
      - './user:/app/user'
      - './util:/app/util'
