@@ -3,7 +3,6 @@ FROM adhi97/alpine-python3-base
 MAINTAINER Adheesh Maheshwari <adhi97@gmail.com>
 
 WORKDIR /app
-RUN touch __init__.py
 COPY user ./user
 COPY util ./util
 
