@@ -7,7 +7,7 @@ const routes = (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={null} />
-      <Route path="/:username" component={NamecardView} />
+      <Route path="/user/:username" component={NamecardView} />
     </Switch>
   </BrowserRouter>
 );
