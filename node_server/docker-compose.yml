@@ -1,0 +1,28 @@
+version: '3'
+services: 
+  db:
+    image: "postgres:9.6"
+    environment:
+     POSTGRES_PASSWORD: 123456
+     POSTGRES_USER: postgres
+     POSTGRES_DB: reachaf_db
+    ports:
+      - "5432:5432"
+    container_name: db
+
+  reachaf_api:
+    build: 
+      context: ./reachaf_api
+      dockerfile: Dockerfile
+    container_name: reachaf_api
+    depends_on: 
+      - db
+    volumes:
+      - "./reachaf_api:/app"
+    ports:
+      - "4000:4000"
+      - "5858:5858"
+    environment:
+      SERVE_IP: "0.0.0.0"
+
+

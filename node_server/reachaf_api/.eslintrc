@@ -1,0 +1,22 @@
+{
+  "extends": ["eslint:recommended"],
+  "plugins": [
+    "prettier",
+    "babel"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": [ "error", { "singleQuote": true } ],
+    "no-console": "off"
+  }
+}
