@@ -9,9 +9,13 @@ services:
     environment:
       PYTHONUNBUFFERED: 0
       MONGODB_HOST: mongo
-      MONGODB_USER: connectme
-      MONGODB_PASS: mypassword
-      MONGODB_DATABASE: users
+      MONGODB_USER: 'connectme'
+      MONGODB_PASS: 'mypassword'
+      MONGODB_DATABASE: 'users'
+      JWT_SECRET: '5d8e8d4d3de3469fb0bd228c9122a4a4'
+      JWT_REFRESH_TTL: 420
+      JWT_TTL: 300
+      JWT_ISS: 'c1132c50b32e42feadc6b28433cf6d9c'
     volumes:
      - './user:/app/user'
      - './util:/app/util'
@@ -26,6 +30,14 @@ services:
     command: sh -c "nginx && uwsgi --ini /app/uwsgi.ini --processes 1 --touch-reload /app/auth/app/app.py"
     environment:
       PYTHONUNBUFFERED: 0
+      MONGODB_HOST: mongo
+      MONGODB_USER: 'connectme'
+      MONGODB_PASS: 'mypassword'
+      MONGODB_DATABASE: 'login'
+      JWT_SECRET: '5d8e8d4d3de3469fb0bd228c9122a4a4'
+      JWT_REFRESH_TTL: 420
+      JWT_TTL: 300
+      JWT_ISS: 'c1132c50b32e42feadc6b28433cf6d9c'
     volumes:
      - './auth:/app/auth'
      - './util:/app/util'

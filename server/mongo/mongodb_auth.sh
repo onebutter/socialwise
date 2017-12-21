@@ -6,6 +6,7 @@ PASS=${MONGODB_PASS:-"4dminPass"}
 
 declare -a DATABASE_LIST=(
     "users"
+    "login"
 )
 
 
