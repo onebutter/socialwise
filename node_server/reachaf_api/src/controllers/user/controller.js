@@ -2,6 +2,8 @@ import jwt from 'jsonwebtoken';
 import models from 'models';
 const User = models.User;
 
+//add namecard functionality
+
 export const getUsers = async (req, res) => {
   try {
     const secret = req.app.get('jwt-secret');

@@ -3,6 +3,8 @@ import models from 'models';
 import jwt from 'jsonwebtoken';
 const { User } = models;
 
+//add namecard functionality
+
 export const register = async (req, res) => {
   try {
     const { username, password } = req.body;

@@ -2,6 +2,8 @@ import bcrypt from 'bcryptjs';
 import pick from 'lodash/pick';
 import allowed from './permissions';
 
+//add namecard functionality
+
 export default (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
