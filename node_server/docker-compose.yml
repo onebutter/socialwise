@@ -17,8 +17,6 @@ services:
     container_name: reachaf_api
     depends_on: 
       - db
-    volumes:
-      - "./reachaf_api:/app"
     ports:
       - "4000:4000"
       - "5858:5858"
